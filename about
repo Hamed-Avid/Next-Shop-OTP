@@ -1,4 +1,4 @@
-This is a shopping website with a NextJs app router.
+This is a shopping website with a Next 13 app router.
 The purpose is to provide the possibility of user authentication by OTP and httpOnly cookie with a refresh token and access token.
 The Admin can view, add, and edit products, categories, orders, coupons, and users in his panel.
 The user can view and order the products, pay from his cart, and see the orders in his panel.
