@@ -66,7 +66,7 @@ function EditProductPage() {
 
   return (
     <div className="max-w-lg mb-10">
-      <h1 className="text-xl font-bold mb-4">ویرایش محصول</h1>
+      <h1 className="text-xl font-bold text-secondary-800 mb-4">ویرایش محصول</h1>
       <ProductForm
         formData={formData}
         setFormData={setFormData}

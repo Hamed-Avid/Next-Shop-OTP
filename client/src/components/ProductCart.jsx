@@ -1,7 +1,7 @@
 "use client";
 
-import AddToCart from "@/app/(user)/products/AddToCart";
-import LikeProduct from "@/app/(user)/products/LikeProduct";
+import AddToCart from "@/common/AddToCart";
+import LikeProduct from "@/common/LikeProduct";
 import {
   toPersianNumbers,
   toPersianNumbersWithComma,
@@ -14,34 +14,35 @@ function ProductCart({ product }) {
   const { title, price, discount, offPrice, likesCount, imageLink, slug } =
     product;
   return (
-    <div className="flex flex-col mb-10 bg-white shadow-sm rounded-xl h-full p-2 transition-all duration-200 ease-in-out hover:shadow-lg">
-      <Link href={`/products/${slug}`}>
-        <div className="static flex justify-center">
-          <div className="static -mt-20 mb-8 rounded-xl shadow-xl bg-slate-300 mx-8 w-64 h-40">
-            <div className="absolute flex items-center bg-white w-11 rounded-xl">
-              <LikeProduct productId={product._id} isLiked={product.isLiked} />
-              <span
-                className={`${
-                  likesCount == 0 && "hidden"
-                } text-rose-400 text-lg pb-1`}
-              >
-                {likesCount}
-              </span>
-            </div>
+    <div className="flex flex-col bg-white shadow-sm rounded-xl h-full p-2 transition-all duration-200 ease-in-out hover:shadow-lg">
+      <div className="flex justify-center">
+        <div className="-mt-10 mb-8 rounded-xl shadow-xl bg-slate-300 mx-8 w-64 h-36">
+          <Link href={`/products/${slug}`}>
             <Image
               src={imageLink}
               width={256}
               height={160}
               alt={title}
-              className="w-full h-full rounded-xl"
+              className="w-full h-full rounded-xl object-cover aspect-auto"
             />
-          </div>
+          </Link>
         </div>
-      </Link>
-      <Link href={`/products/${slug}`}>
-        <h2 className="font-bold text-xl mb-4">{title}</h2>
-      </Link>
-
+      </div>
+      <div className="flex items-center justify-between">
+        <Link href={`/products/${slug}`}>
+          <h2 className="font-bold text-xl text-secondary-800 mb-4">{title}</h2>
+        </Link>
+        <div className="flex items-center justify-center bg-slate-100 m-2 pt-1 px-1 w-11 rounded-xl">
+          <LikeProduct productId={product._id} isLiked={product.isLiked} />
+          <span
+            className={`${
+              likesCount == 0 && "hidden"
+            } text-rose-400 text-lg pb-1`}
+          >
+            {likesCount}
+          </span>
+        </div>
+      </div>
       <Link
         href={`/products/${slug}`}
         className="flex items-center gap-x-2 text-primary-900 font-bold"
@@ -50,9 +51,9 @@ function ProductCart({ product }) {
         <HiOutlineArrowLongLeft className="icon" />
       </Link>
       <div className="flex items-center justify-between my-3 border-t-2 pt-3 px-3 md:px-1">
-        <AddToCart product={product} />
+        <AddToCart productId={product._id} />
         <div>
-          <div className="flex gap-x-2 whitespace-nowrap">
+          <div className="flex gap-x-2 text-secondary-800 whitespace-nowrap">
             <span className={`${discount ? "line-through" : "font-bold"}`}>
               {toPersianNumbersWithComma(price)} {!discount && "تومان"}
             </span>
@@ -66,7 +67,7 @@ function ProductCart({ product }) {
           </div>
           {!!discount && (
             <div className="flex items-center justify-between">
-              <p className="text-lg font-bold whitespace-nowrap">
+              <p className="text-lg text-secondary-800 font-bold whitespace-nowrap">
                 {toPersianNumbersWithComma(offPrice)} تومان
               </p>
             </div>

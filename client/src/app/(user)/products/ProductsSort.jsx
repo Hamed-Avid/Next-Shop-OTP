@@ -39,7 +39,7 @@ function ProductsSort() {
   };
 
   return (
-    <div className="bg-white rounded-xl p-3 transition-all duration-200 ease-in-out">
+    <div className="bg-white text-secondary-800 rounded-xl p-3 transition-all duration-200 ease-in-out">
       <div
         onClick={() => setIsToggle(!isToggle)}
         className="font-bold flex justify-between"

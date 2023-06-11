@@ -33,7 +33,7 @@ function AddProductPage() {
 
   return (
     <div className="max-w-md mb-8 w-full">
-      <h1 className="mb-8 text-xl font-bold">محصول جدید</h1>
+      <h1 className="mb-8 text-xl text-secondary-800 font-bold">محصول جدید</h1>
       <ProductForm
         formData={formData}
         setFormData={setFormData}

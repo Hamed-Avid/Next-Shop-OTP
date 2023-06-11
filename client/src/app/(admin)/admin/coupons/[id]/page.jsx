@@ -14,7 +14,7 @@ function CouponDetail() {
   if (isLoading) return <Loading />;
 
   return (
-    <section className="bg-white rounded-2xl p-4 max-w-md">
+    <section className="bg-white text-secondary-800 rounded-2xl p-4 max-w-md">
       <h1 className="font-bold text-lg mb-3">اطلاعات کد تخفیف</h1>
       <div className="flex flex-col mx-5 mb-4 gap-y-4">
         <span>کد: {coupon.code}</span>
@@ -27,12 +27,9 @@ function CouponDetail() {
         <span>تاریخ انقضا: {toLocalDateStringShort(coupon.expireDate)}</span>
         <span className="grid grid-cols-2 gap-3">
           {coupon.productIds.map((product) => (
-            <span
-              key={product._id}
-              className="col-span-1 badge badge--secondary"
-            >
-              {product.title}
-            </span>
+            <div key={product._id} className="col-span-1">
+              <span className="badge badge--secondary"> {product.title}</span>{" "}
+            </div>
           ))}
         </span>
       </div>

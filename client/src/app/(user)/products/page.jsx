@@ -26,20 +26,19 @@ async function ProductsPage({ searchParams }) {
 
   return (
     <main>
-      <h1 className="font-bold text-xl mb-4">محصولات</h1>
-      <div className="grid grid-cols-12">
+      <div className="grid grid-cols-12 mt-8 m-2">
         <div className="hidden md:block md:col-span-3 lg:col-span-2 px-3">
           <SideBar categories={categories} />
         </div>
         <div className="col-span-12 m-5 md:hidden">
           <TopBar categories={categories} />
         </div>
-        <section className="col-span-12 md:col-span-9 lg:col-span-10 m-2 mt-16">
-          <div className="grid grid-cols-6 gap-x-4 gap-y-20">
+        <section className="col-span-12 md:col-span-9 lg:col-span-10 mt-8">
+          <div className="grid grid-cols-6 gap-x-4 gap-y-14 mb-8">
             {products.map((item) => (
               <div
                 key={item._id}
-                className="col-span-6 md:col-span-3 lg:col-span-2"
+                className="col-span-6 sm:col-span-3 lg:col-span-2"
               >
                 <ProductCart product={item} />
               </div>

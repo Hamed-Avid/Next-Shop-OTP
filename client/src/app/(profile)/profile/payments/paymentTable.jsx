@@ -4,8 +4,8 @@ import { toPersianNumbersWithComma } from "@/utils/toPersianNumber";
 
 function PaymentTable({ payments }) {
   return (
-    <div className="border rounded-2xl overflow-auto my-8">
-      <table className="border-collapse table-auto w-full min-w-[800px] text-sm">
+    <div className="border rounded-2xl scrollbar overflow-auto my-8">
+      <table className="border-collapse table-auto w-full min-w-[800px] text-sm text-secondary-800">
         <thead>
           <tr className="bg-gray-200/80">
             {userPaymentTHeads.map((item) => (
@@ -18,7 +18,7 @@ function PaymentTable({ payments }) {
         <tbody>
           {payments
             .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
-            .map((item ) => (
+            .map((item) => (
               <tr key={item._id} className="bg-white">
                 <td className="table__td whitespace-nowrap truncate">
                   {item.invoiceNumber}
@@ -38,7 +38,7 @@ function PaymentTable({ payments }) {
                 <td className="table__td">
                   {toPersianNumbersWithComma(item.amount)}
                 </td>
-                <td className="table__td">
+                <td className="table__td whitespace-nowrap">
                   {toLocalDateString(item.createdAt)}
                 </td>
                 <td className="table__td">

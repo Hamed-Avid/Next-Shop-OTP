@@ -4,10 +4,10 @@ import { useGetUser } from "@/hooks/useAuth";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { FaBoxOpen } from "react-icons/fa";
+import { FaBoxOpen, FaUserAlt } from "react-icons/fa";
 import { HiOutlineMenuAlt3, HiOutlineShoppingCart } from "react-icons/hi";
 import { GoHome } from "react-icons/go";
-import { RiArrowDownSLine, RiCloseLine, RiUser6Line } from "react-icons/ri";
+import { RiArrowDownSLine, RiCloseLine } from "react-icons/ri";
 import { TbLogin } from "react-icons/tb";
 import { HiShoppingCart } from "react-icons/hi2";
 import UserSideBar from "./(profile)/profile/sideBar";
@@ -60,8 +60,8 @@ function Header() {
                 <li
                   className={
                     pathname === "/"
-                      ? "text-primary-900 border-b-2 border-primary-900"
-                      : ""
+                      ? "text-primary-900 font-bold text-lg border-b-2 border-primary-900"
+                      : "text-secondary-800"
                   }
                 >
                   <Link className="block py-2" href="/">
@@ -71,8 +71,8 @@ function Header() {
                 <li
                   className={
                     pathname === "/products"
-                      ? "text-primary-900 border-b-2 border-primary-900"
-                      : ""
+                      ? "text-primary-900 font-bold text-lg border-b-2 border-primary-900"
+                      : "text-secondary-800"
                   }
                 >
                   <Link className="block py-2" href="/products">
@@ -91,9 +91,9 @@ function Header() {
                     {cart ? cart.payDetail.orderItems.length : 0}
                   </span>
                   {cart?.payDetail?.orderItems.length > 0 ? (
-                    <HiShoppingCart className="icon" />
+                    <HiShoppingCart className="icon text-secondary-800" />
                   ) : (
-                    <HiOutlineShoppingCart className="icon" />
+                    <HiOutlineShoppingCart className="icon text-secondary-800" />
                   )}
                 </Link>
               </div>
@@ -101,9 +101,9 @@ function Header() {
                 {user ? (
                   <button
                     onClick={() => setIsProfileToggle(!isProfileToggle)}
-                    className="flex items-center gap-x-0.5 border border-gray-200 py-2 px-1 rounded-lg"
+                    className="flex items-center gap-x-0.5 border border-gray-200 text-secondary-800 py-2 px-1 rounded-lg"
                   >
-                    <RiUser6Line className="icon" />
+                    <FaUserAlt className="w-5 h-5" />
                     <RiArrowDownSLine className="icon" />
                   </button>
                 ) : (
@@ -127,8 +127,8 @@ function Header() {
               {user && user?.avatarUrl ? user?.avatarUrl : user?.name[0]}
             </span>
             <div className="flex flex-col text-sm gap-y-1">
-              <span>{user?.name}</span>
-              <span>{user?.phoneNumber}</span>
+              <span className="text-secondary-800 font-bold">{user?.name}</span>
+              <span className="text-secondary-800">{user?.phoneNumber}</span>
             </div>
           </div>
           {user?.role === "ADMIN" ? <AdminSideBar /> : <UserSideBar />}

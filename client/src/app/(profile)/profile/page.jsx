@@ -23,7 +23,7 @@ function ProfilePage() {
   if (isLoading) return <Loading />;
   return (
     <main>
-      <div className="bg-white flex items-center justify-center py-3 px-5 rounded-2xl w-fit">
+      <div className="bg-white text-secondary-800 flex items-center justify-center py-3 px-5 rounded-2xl w-fit">
         <span className="font-bold text-xl">
           {user.name} عزیز😍؛
           <span className="font-normal text-base pr-2 pl-6">
@@ -32,13 +32,15 @@ function ProfilePage() {
         </span>
       </div>
       <section className="mt-8">
-        <h1 className="font-black text-xl lg:text-2xl mb-6">سوابق من</h1>
+        <h1 className="font-black text-secondary-800 text-xl lg:text-2xl mb-6">
+          سوابق من
+        </h1>
         <div className="grid grid-cols-6 gap-4 pb-8 border-b-2">
           <div className="col-span-6 md:col-span-2 flex gap-x-2 items-center bg-white p-3 rounded-2xl">
             <div className="text-white bg-gray-400 p-3 rounded-2xl">
               <RiCalendarCheckLine className="w-8 h-8" />
             </div>
-            <div className="flex flex-col">
+            <div className="text-secondary-800 flex flex-col">
               <span>تاریخ پیوستن</span>
               <span className="font-bold text-lg">
                 {toLocalDateStringShort(user.createdAt)}
@@ -49,7 +51,7 @@ function ProfilePage() {
             <div className="text-white bg-cyan-400 p-3 rounded-2xl">
               <FaBoxOpen className="w-8 h-8" />
             </div>
-            <div className="flex flex-col">
+            <div className="text-secondary-800 flex flex-col">
               <span>محصولات</span>
               <span className="font-bold text-lg">
                 {calcTotalProducts(payments) || 0}
@@ -60,7 +62,7 @@ function ProfilePage() {
             <div className="text-white bg-green-400 p-3 rounded-2xl">
               <RiLineChartLine className="w-8 h-8" />
             </div>
-            <div className="flex flex-col">
+            <div className="text-secondary-800 flex flex-col">
               <span>سفارش ها</span>
               <span className="font-bold text-lg">
                 {toPersianNumbers(payments.length || 0)}
@@ -71,7 +73,9 @@ function ProfilePage() {
       </section>
       <section className="p-4 mt-8">
         <div className="flex items-center justify-between">
-          <h1 className="font-bold text-xl">آخرین سفارش ها</h1>
+          <h1 className="font-bold text-xl text-secondary-800">
+            آخرین سفارش ها
+          </h1>
           <Link
             className="text-primary-900 flex gap-x-2"
             href="/profile/payments"

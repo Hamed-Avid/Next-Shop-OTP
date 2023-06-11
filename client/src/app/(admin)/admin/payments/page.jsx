@@ -13,7 +13,7 @@ function PaymentsPage() {
 
   return (
     <div>
-      <h1 className="text-xl font-bold mb-5">سفارشات</h1>
+      <h1 className="text-xl font-bold text-secondary-800 mb-5">سفارشات</h1>
       <PaymentTable payments={payments} />
     </div>
   );

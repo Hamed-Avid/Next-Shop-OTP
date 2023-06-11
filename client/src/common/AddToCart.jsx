@@ -7,10 +7,9 @@ import { useQueryClient } from "@tanstack/react-query";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { toast } from "react-hot-toast";
-import { HiOutlineShoppingCart, HiShoppingCart } from "react-icons/hi2";
 import { MdOutlineAddShoppingCart } from "react-icons/md";
 
-function AddToCart({ product }) {
+function AddToCart({ productId }) {
   const router = useRouter();
   const queryClient = useQueryClient();
   const { data } = useGetUser();
@@ -24,7 +23,7 @@ function AddToCart({ product }) {
       return;
     }
     try {
-      const { message } = await mutateAsync(product._id);
+      const { message } = await mutateAsync(productId);
       toast.success(message);
       queryClient.invalidateQueries({ queryKey: ["get-user"] });
     } catch (error) {
@@ -39,13 +38,12 @@ function AddToCart({ product }) {
 
   return (
     <>
-      {isExistInCart(user, product._id) ? (
+      {isExistInCart(user, productId) ? (
         <Link
           href="/cart"
-          className="flex items-center text-white font-bold btn btn--primary whitespace-nowrap"
+          className="flex items-center text-white font-bold btn btn--primary hover:bg-success/90 bg-success whitespace-nowrap"
         >
           ادامه خرید
-          <HiShoppingCart className="icon" />
         </Link>
       ) : isLoading ? (
         <Loading />

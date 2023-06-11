@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
         <Providers>
           <Toaster />
           <Header />
-          <div className="container overflow-hidden xl:max-w-screen-xl">
+          <div className="overflow-hidden xl:max-w-screen-2xl">
             {children}
           </div>
         </Providers>

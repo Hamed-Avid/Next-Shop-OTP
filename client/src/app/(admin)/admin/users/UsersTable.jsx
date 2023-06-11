@@ -9,8 +9,8 @@ import { IoShieldCheckmarkSharp } from "react-icons/io5";
 
 function UsersTable({ users }) {
   return (
-    <div className="border rounded-2xl overflow-auto my-8">
-      <table className="border-collapse table-auto w-full min-w-[800px] text-sm">
+    <div className="border rounded-2xl scrollbar overflow-auto my-8">
+      <table className="border-collapse table-auto w-full min-w-[800px] text-sm text-secondary-800">
         <thead>
           <tr className="bg-gray-300">
             {userListTHeads.map((item) => (

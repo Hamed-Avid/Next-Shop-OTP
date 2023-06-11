@@ -1,14 +1,17 @@
 "use client";
 
+import { useGetUser } from "@/hooks/useAuth";
 import { likeProduct } from "@/services/productService";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { toast } from "react-hot-toast";
 import { FcLike, FcLikePlaceholder } from "react-icons/fc";
 
-function LikeProduct({ productId, isLiked }) {
+function LikeProduct({ productId, isLiked = false, likes = "" }) {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
+  const { data } = useGetUser();
+  const { user } = data || {};
 
   const likeHandler = async () => {
     try {
@@ -23,7 +26,7 @@ function LikeProduct({ productId, isLiked }) {
   return (
     <div>
       <button onClick={likeHandler}>
-        {isLiked ? (
+        {isLiked || likes?.includes(user?._id) ? (
           <FcLike className="w-6 h-6" />
         ) : (
           <FcLikePlaceholder className="w-6 h-6" />

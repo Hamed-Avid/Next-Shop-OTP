@@ -17,12 +17,12 @@ function PaymentDetail() {
   if (isLoading) return <Loading />;
 
   return (
-    <section className="bg-white rounded-2xl p-4 max-w-md">
+    <section className="bg-white text-secondary-800 rounded-2xl p-4 max-w-md">
       <h1 className="font-bold text-lg mb-3">اطلاعات سفارش</h1>
       <div className="flex flex-col mx-5 mb-4 gap-y-4">
         <span>شماره فاکتور: {payment[0].invoiceNumber}</span>
         <span>
-          وضعیت:
+          وضعیت: 
           {payment[0].status === "COMPLETED" ? (
             <span className="badge badge--success">موفق</span>
           ) : (
@@ -31,9 +31,9 @@ function PaymentDetail() {
         </span>
         <span className="grid grid-cols-2 gap-3">
           {payment[0].cart.productDetail.map((product, index) => (
-            <span key={index} className="col-span-1 badge badge--secondary">
-              {product.title}
-            </span>
+            <div key={index} className="col-span-1">
+              <span className="badge badge--secondary"> {product.title}</span>
+            </div>
           ))}
         </span>
         <span>تاریخ سفارش: {toLocalDateStringShort(payment[0].createdAt)}</span>

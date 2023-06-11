@@ -14,7 +14,7 @@ function CategoryDetailPage() {
   if (isLoading) return <Loading />;
 
   return (
-    <section className="bg-white rounded-2xl p-4 max-w-md">
+    <section className="bg-white text-secondary-800 rounded-2xl p-4 max-w-md">
       <h1 className="font-bold text-lg mb-3">اطلاعات دسته بندی</h1>
       <div className="flex flex-col mx-5 mb-4 gap-y-4">
         <span>عنوان: {category.title}</span>

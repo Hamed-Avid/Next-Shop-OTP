@@ -44,7 +44,9 @@ function UpdateCategoryPage() {
 
   return (
     <div className="max-w-lg w-full">
-      <h1 className="text-xl font-bold mb-6">ویرایش دسته بندی</h1>
+      <h1 className="text-xl font-bold text-secondary-800 mb-6">
+        ویرایش دسته بندی
+      </h1>
       <CategoryForm
         formData={formData}
         setFormData={setFormData}

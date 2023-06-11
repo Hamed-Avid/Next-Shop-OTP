@@ -23,7 +23,9 @@ function AdminPage() {
         ) : (
           <>
             <div className="flex items-center justify-between">
-              <h1 className="font-bold text-xl">آخرین سفارش ها</h1>
+              <h1 className="font-bold text-xl text-secondary-800">
+                آخرین سفارش ها
+              </h1>
               <Link
                 className="text-primary-900 flex gap-x-2"
                 href="/admin/payments"
@@ -40,13 +42,15 @@ function AdminPage() {
           </>
         )}
       </section>
-      <section className="mt-4">
+      <section className="mt-8">
         {isLoadingUsers ? (
           <Loading />
         ) : (
           <>
             <div className="flex items-center justify-between">
-              <h1 className="font-bold text-xl">تازه ترین کاربرها</h1>
+              <h1 className="font-bold text-xl text-secondary-800">
+                تازه ترین کاربرها
+              </h1>
               <Link
                 className="text-primary-900 flex gap-x-2"
                 href="/admin/users"

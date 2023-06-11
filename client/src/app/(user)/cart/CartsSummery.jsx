@@ -20,7 +20,7 @@ function CartsSummery({ payDetail }) {
   };
 
   return (
-    <div className="border p-2 rounded-xl">
+    <div className="border p-2 text-secondary-800 bg-white rounded-xl">
       <p className="font-bold mb-4">اطلاعات پرداخت</p>
       <div className="flex items-center justify-between mb-4">
         <span>جمع کل</span>

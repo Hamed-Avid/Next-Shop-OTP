@@ -12,7 +12,7 @@ function Payments() {
 
   return (
     <div>
-      <h1>فهرست سفارشات</h1>
+      <h1 className="font-bold text-lg text-secondary-800">فهرست سفارشات</h1>
       <PaymentTable payments={payments} />
     </div>
   );

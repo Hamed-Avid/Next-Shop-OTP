@@ -20,11 +20,11 @@ export default function RootLayout({ children }) {
         <Providers>
           <Toaster />
           <Header />
-          <div className="container xl:max-w-screen-xl grid grid-cols-6 bg-white h-screen">
-            <div className="hidden md:block col-span-1 overflow-y-auto">
+          <div className="xl:max-w-screen-2xl grid grid-cols-6 bg-white h-screen">
+            <div className="hidden md:block col-span-1">
               <SideBar />
             </div>
-            <div className="col-span-6 md:col-span-5 overflow-y-auto bg-gray-50 rounded-tr-3xl p-3 md:p-8">
+            <div className="col-span-6 md:col-span-5 bg-gray-50 scrollbar rounded-tr-3xl p-3 md:p-8">
               {children}
             </div>
           </div>

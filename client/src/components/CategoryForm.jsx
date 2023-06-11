@@ -68,7 +68,9 @@ function CategoryForm({
         />
       ))}
       <div>
-        <label htmlFor="type">نوع</label>
+        <label htmlFor="type" className="text-secondary-800 pb-2">
+          نوع
+        </label>
         <Select
           id="type"
           onChange={setSelectedType}

@@ -9,8 +9,8 @@ import { HiEye } from "react-icons/hi";
 
 function PaymentTable({ payments }) {
   return (
-    <div className="border rounded-2xl overflow-auto my-8">
-      <table className="border-collapse table-auto w-full min-w-[800px] text-sm">
+    <div className="border rounded-2xl scrollbar overflow-auto mb-4 my-8">
+      <table className="border-collapse table-auto w-full min-w-[800px] text-sm text-secondary-800">
         <thead>
           <tr className="bg-gray-300">
             {adminPaymentTHeads.map((item) => (
@@ -53,7 +53,7 @@ function PaymentTable({ payments }) {
                 <td className="table__td">
                   {toPersianNumbersWithComma(item.amount)}
                 </td>
-                <td className="table__td">
+                <td className="table__td whitespace-nowrap">
                   {toLocalDateString(item.createdAt)}
                 </td>
                 <td className="table__td">

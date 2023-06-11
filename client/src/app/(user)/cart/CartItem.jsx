@@ -47,7 +47,7 @@ function CartItem({ product }) {
   };
 
   return (
-    <div className="border rounded-xl p-4 flex justify-between">
+    <div className="border rounded-xl text-secondary-800 bg-white p-4 flex justify-between">
       <h1 className="flex-1 font-bold">{title}</h1>
       <div className="flex items-center justify-between gap-x-8 flex-1">
         <div>

@@ -14,7 +14,7 @@ async function ProductDetail() {
   if (!user) return <Loading />;
 
   return (
-    <section className="bg-white rounded-2xl p-4 max-w-md">
+    <section className="bg-white text-secondary-800 rounded-2xl p-4 max-w-md">
       <h1 className="font-bold text-lg mb-3">اطلاعات کاربر</h1>
       <div className="flex flex-col mx-5 mb-4 gap-y-4">
         <span>نام و نام خانوادگی: {user.name}</span>
@@ -31,9 +31,9 @@ async function ProductDetail() {
           {payments &&
             payments.map((payment) =>
               payment.cart.productDetail.map((item, index) => (
-                <span key={index} className="col-span-1 badge badge--secondary">
-                  {item.title}
-                </span>
+                <div key={index} className="col-span-1">
+                  <span className="badge badge--secondary">{item.title}</span>
+                </div>
               ))
             )}
         </span>

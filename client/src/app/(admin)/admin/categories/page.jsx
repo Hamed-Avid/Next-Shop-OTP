@@ -29,7 +29,9 @@ function Categories() {
   return (
     <div>
       <div className="flex items-center justify-between mb-5">
-        <h1 className="text-xl font-bold mb-5">دسته بندی ها</h1>
+        <h1 className="text-xl font-bold text-secondary-800 mb-5">
+          دسته بندی ها
+        </h1>
         <Link
           href="/admin/categories/add"
           className="flex items-center gap-x-2 text-primary-900 font-bold"

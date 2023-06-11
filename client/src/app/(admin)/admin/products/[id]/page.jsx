@@ -17,7 +17,7 @@ function ProductDetail() {
   if (isLoading) return <Loading />;
 
   return (
-    <section className="bg-white rounded-2xl p-4 max-w-md">
+    <section className="bg-white text-secondary-800 rounded-2xl p-4 max-w-md">
       <h1 className="font-bold text-lg mb-3">اطلاعات محصول</h1>
       <div className="flex justify-center">
         <div className=" mb-8 rounded-xl shadow-xl bg-slate-300 mx-8 w-96 h-48">

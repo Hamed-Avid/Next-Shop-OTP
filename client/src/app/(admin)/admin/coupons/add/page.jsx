@@ -35,7 +35,7 @@ function AddCoupon() {
 
   return (
     <div className="max-w-md mb-8 w-full">
-      <h1 className="mb-8 text-xl font-bold">کد تخفیف جدید</h1>
+      <h1 className="mb-8 text-xl text-secondary-800 font-bold">کد تخفیف جدید</h1>
       <CouponsForm
         formData={formData}
         setFormData={setFormData}

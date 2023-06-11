@@ -10,8 +10,8 @@ import { FiEdit3 } from "react-icons/fi";
 
 function CouponsTable({ coupons, removeHandler }) {
   return (
-    <div className="border rounded-2xl overflow-auto my-8">
-      <table className="border-collapse table-auto w-full min-w-[800px] text-sm">
+    <div className="border rounded-2xl scrollbar overflow-auto my-8">
+      <table className="border-collapse table-auto w-full min-w-[800px] text-sm text-secondary-800">
         <thead>
           <tr className="bg-gray-300">
             {couponListTHeads.map((item) => (

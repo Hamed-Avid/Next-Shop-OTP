@@ -3,12 +3,9 @@
 import { logoutUser } from "@/services/authServices";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import {
-  RiDashboard3Line,
-  RiLineChartLine,
-  RiUserSettingsLine,
-} from "react-icons/ri";
-import { TbLogout } from "react-icons/tb";
+import { AiFillDashboard } from "react-icons/ai";
+import { FaRegChartBar, FaUserEdit } from "react-icons/fa";
+import { IoLogOut } from "react-icons/io5";
 
 function SideBar() {
   const pathname = usePathname();
@@ -24,7 +21,7 @@ function SideBar() {
         className={pathname === "/profile" ? "nav__list__active" : "nav__list"}
       >
         <Link href="/profile" className="cursor-pointer flex gap-x-2">
-          <RiDashboard3Line className="icon" />
+          <AiFillDashboard className="icon" />
           داشبورد
         </Link>
       </li>
@@ -34,7 +31,7 @@ function SideBar() {
         }
       >
         <Link href="/profile/me" className="cursor-pointer flex gap-x-2">
-          <RiUserSettingsLine className="icon" />
+          <FaUserEdit className="icon" />
           اطلاعات کاربری
         </Link>
       </li>
@@ -44,13 +41,13 @@ function SideBar() {
         }
       >
         <Link href="/profile/payments" className="cursor-pointer flex gap-x-2">
-          <RiLineChartLine className="icon" />
+          <FaRegChartBar className="icon" />
           سفارشات
         </Link>
       </li>
-      <li className="hover:bg-gray-100 hover:text-error p-2 rounded-xl">
+      <li className="hover:bg-gray-100 hover:text-error text-secondary-800 p-2 rounded-xl">
         <button onClick={logoutHandler} className="flex gap-x-2">
-          <TbLogout className="icon" />
+          <IoLogOut className="icon" />
           خروج
         </button>
       </li>

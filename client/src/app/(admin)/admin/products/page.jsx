@@ -29,7 +29,7 @@ function Products() {
   return (
     <div>
       <div className="flex items-center justify-between mb-5">
-        <h1 className="text-xl font-bold mb-5">محصولات</h1>
+        <h1 className="text-xl font-bold mb-5 text-secondary-800">محصولات</h1>
         <Link
           href="/admin/products/add"
           className="flex items-center gap-x-2 text-primary-900 font-bold"

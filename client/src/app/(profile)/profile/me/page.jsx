@@ -45,9 +45,9 @@ function MePage() {
       className="max-w-md bg-white rounded-2xl p-4 mb-8"
       onSubmit={submitHandler}
     >
-      <h1 className="font-bold text-xl mb-6">اطلاعات حساب</h1>
+      <h1 className="font-bold text-xl text-secondary-800 mb-6">اطلاعات حساب</h1>
       <p className="text-sm mb-8 flex items-center gap-x-2">
-        <BsFillInfoCircleFill className="icon text-gray-500" />
+        <BsFillInfoCircleFill className="icon text-secondary-500" />
         شماره موبایل قابل ویرایش نیست
       </p>
       <form className="space-y-8">

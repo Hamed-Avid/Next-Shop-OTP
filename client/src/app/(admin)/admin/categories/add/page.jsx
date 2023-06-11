@@ -28,7 +28,9 @@ function AddCategoryPage() {
 
   return (
     <div className="max-w-lg w-full">
-      <h1 className="text-xl font-bold mb-6">افزودن دسته بندی جدید</h1>
+      <h1 className="text-xl font-bold text-secondary-800 mb-6">
+        افزودن دسته بندی جدید
+      </h1>
       <CategoryForm
         formData={formData}
         setFormData={setFormData}

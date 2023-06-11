@@ -1,10 +1,10 @@
+import AddToCart from "@/common/AddToCart";
+import LikeProduct from "@/common/LikeProduct";
 import { getProductBySlug, getProducts } from "@/services/productService";
-import AddToCart from "../AddToCart";
 import {
   toPersianNumbers,
   toPersianNumbersWithComma,
 } from "@/utils/toPersianNumber";
-import LikeProduct from "../LikeProduct";
 import Image from "next/image";
 
 export const dynamic = "force-static";
@@ -22,14 +22,22 @@ export async function generateMetadata({ params }) {
 async function ProductPage({ params }) {
   const { product } = await getProductBySlug(params.slug);
 
-  const { title, description, imageLink, discount, likes, price, offPrice } =
-    product;
+  const {
+    title,
+    description,
+    imageLink,
+    brand,
+    discount,
+    likes,
+    price,
+    offPrice,
+  } = product;
 
   return (
     <main className="flex items-center justify-center">
-      <section className="my-10 p-4 w-screen max-w-md flex flex-col bg-white shadow-sm rounded-xl md:w-full h-full transition-all duration-200 ease-in-out hover:shadow-lg">
+      <section className="my-10 p-4 w-screen max-w-md flex flex-col bg-white text-secondary-800 shadow-sm rounded-xl md:w-full h-full transition-all duration-200 ease-in-out hover:shadow-lg">
         <div className="flex items-start bg-slate-100 pt-1 px-1 rounded-lg w-10">
-          <LikeProduct product={product} />
+          <LikeProduct likes={product.likes} productId={product._id} />
           <span
             className={`${
               likes.length === 0 && "hidden"
@@ -39,7 +47,7 @@ async function ProductPage({ params }) {
           </span>
         </div>
         <div className="flex justify-center">
-          <div className=" mb-8 rounded-xl shadow-xl bg-slate-300 mx-8 w-96 h-48">
+          <div className="mb-8 rounded-xl shadow-xl bg-slate-300 mx-8 w-96 h-48">
             <Image
               src={imageLink}
               width={256}
@@ -51,8 +59,17 @@ async function ProductPage({ params }) {
         </div>
         <h2 className="font-bold text-xl mb-4">{title}</h2>
         <p className="font-medium text-lg">{description}</p>
+        <span className="mt-3">
+          برند: <span className="badge badge--primary">{brand}</span>
+        </span>
+        <span className="mt-3">
+          موجودی: 
+          <span className="badge badge--secondary">
+            {toPersianNumbers(product.countInStock)} عدد
+          </span>
+        </span>
         <div className="flex items-center justify-between my-3 border-t-2 pt-3 px-3 md:px-1">
-          <AddToCart product={product} />
+          <AddToCart productId={product._id} />
           <div>
             <div className="flex gap-x-2 whitespace-nowrap">
               <span className={`${discount ? "line-through" : "font-bold"}`}>
