@@ -1,5 +1,7 @@
 This is a shopping website with a Next 13 app router.
 The purpose is to provide the possibility of user authentication by OTP and httpOnly cookie with a refresh token and access token.
+
+Tasks:
 The Admin can view, add, and edit products, categories, orders, coupons, and users in his panel.
 The user can view and order the products, pay from his cart, and see the orders in his panel.
 using OTP for authentication and authorization in the admin and user panels.
@@ -20,8 +22,3 @@ SERVER_URL=http://localhost:5000
 NODE_ENV=development
 PORT=5000
 ALLOW_CORS_ORIGIN=http://localhost:3000
-
-you must add .env.local in client with this properties:
-
-NEXT_PUBLIC_API_URL=http://localhost:5000/api
-NODE_ENV=development
